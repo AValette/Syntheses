@@ -36,7 +36,7 @@
 	
 	\part{Chimie Physique}
 	\chapter{Chimie Physique}
-	\section*{Chimie Physique ?}
+	\section*{Chimie Physique}
 	La \textit{chimie physique} est avant tout de la thermodynamique, aussi souvent appelée \textit{thermodynamique chimique}. La définition de cette matière serait :
 	\begin{center}
 		\textit{\textsc{Chimie Physique} : cadre conceptuel (et formalisme mathématique) général pour l'étude des transformation de la matière, qu'elles soient chimiques (réactions) ou physiques (changement de phase).} \end{center}
@@ -73,7 +73,7 @@
 	\end{wrapfigure}
 	Il est également possible d'exprimer la loi des gaz parfaits en fonction de la masse volumique $\rho$:
 	\begin{equation}
-	\rho = \frac{nM}{V} = \frac{p}{R^*V}\ \ \ \ \ où\ \ R^* = \frac{R}{M}
+	\rho = \frac{nM}{V} = \frac{p}{R^*T}\ \ \ \ \ où\ \ R^* = \frac{R}{M}
 	\end{equation}
 	
 	Plusieurs généralisations (hors du cas "parfait") sont possibles, comme l'équation du viriel ($p/R^*p : \rho + B(T)\rho^2 + ...$ (développement en série)) ou l'équation de Van Der Waals:
@@ -110,7 +110,7 @@
 	En partant de la définition de l'enthalpie : $H \equiv U + pV$\\
 	$dH = dU + pdV + \underbrace{Vdp}_0 \rightarrow dH =  dU - \underbrace{dW}_{dU-\delta Q} = \delta Q \Rightarrow$
 	\begin{equation}
-	C_p = \left(\frac{\delta Q}{dT}\right)_V = \left(\frac{dH}{dT}\right)_V
+	C_p = \left(\frac{\delta Q}{dT}\right)_P = \left(\frac{dH}{dT}\right)_P
 	\end{equation}
 	Une rumeur dit qu'il faut connaître les bilans (travail, entropie, ...) des quatre transfmorations élémentaires. Pour rappel :
 	\begin{enumerate}
@@ -166,7 +166,7 @@
 	S = f(U) + nR\ln(V)
 	\end{equation}
 	Dérivons cette expression par rapport à $U$ pour trouver $f(U)$ comme en \textit{Analyse I} : $\left(\dfrac{\partial S}{\partial U}\right)_V = \dfrac{1}{T} \rightarrow \dfrac{df(U)}{dU} = \dfrac{1}{T}$.
-	On trouve alors que $df(U) = \frac{dU}{T}$. En multipliant et divisant par $dT$, on voit apparaître l'expression de $C_V$ : $df(U) = \underbrace{C_V}_{dU/dt}\frac{dT}{T}$. On intègre et l'on remplace dans (1.16) :
+	On trouve alors que $df(U) = \frac{dU}{T}$. En multipliant et divisant par $dT$, on voit apparaître l'expression de $C_V$ : $df(U) = \underbrace{C_V}_{dU/dT}\frac{dT}{T}$. On intègre et l'on remplace dans (1.16) :
 	\begin{equation}
 	S = a + C_V\ln(T) + nR\ln(V)
 	\end{equation}
@@ -457,8 +457,8 @@
 	\end{wrapfigure}
 	La ligne de contact se situe entre les trois phases alors que c'est l'angle de contact $\theta$ qui caractérise les interactions moléculaires entre solide, liquide et gaz.\\
 	
-	Si on déplace la ligne de contact dans le but d'agrandir la surface du liquide, la tension superficielle $\gamma_{sl}$ augmente alors que $\gamma_{sl}$ diminue.\\
-	L'énergie $dF$ peut être ainsi écrite\footnote{On peut également obtenir ce résultat par $\sum F = 0$, cf. slide.} : $dF = (\gamma_{sg} - \gamma_{sl})dx + \gamma dx.\cos\theta = 0$\footnote{dF = 0 car F possède un minimum pour $T$ et $V = cste$}. En isolant $\theta$ on trouve la \textbf{loi de Young-Dupré} :
+	Si on déplace la ligne de contact dans le but d'agrandir la surface du liquide, la tension superficielle $\gamma_{sl}$ augmente alors que $\gamma_{sg}$ diminue.\\
+	L'énergie $dF$ peut être ainsi écrite\footnote{On peut également obtenir ce résultat par $\sum F = 0$, cf. slide.} : $dF = (\gamma_{sl} - \gamma_{sg})dx + \gamma dx.\cos\theta = 0$\footnote{dF = 0 car F possède un minimum pour $T$ et $V = cste$}. En isolant $\theta$ on trouve la \textbf{loi de Young-Dupré} :
 	\begin{equation}
 	\cos\theta = \frac{\gamma_{sg} - \gamma_{sl}}{\gamma}
 	\end{equation}
@@ -479,7 +479,7 @@
 	\begin{equation}
 	F = 2\pi r h(\gamma_{sl}-\gamma_{sg}) + \frac{\rho g \pi r^2 h^2}{2} + Cste
 	\end{equation}
-	En minimisant $F$ par rapport à $H$ : $dF/dh = 2\pi r h(\gamma_{sl}-\gamma_{sg}) + \rho g \pi r^2 h = 0$. En isolant $h$ on retrouve la \textbf{loi (de Jurin) de la montée capillaire :}
+	En minimisant $F$ par rapport à $h$ : $dF/dh = 2\pi r h(\gamma_{sl}-\gamma_{sg}) + \rho g \pi r^2 h = 0$. En isolant $h$ on retrouve la \textbf{loi (de Jurin) de la montée capillaire :}
 	\begin{equation}
 	h = \frac{2(\gamma_{sg}-\gamma_{sl}}{\rho g r} = \frac{2\gamma \cos\theta}{\rho g r}
 	\end{equation}
@@ -493,13 +493,13 @@
 	\end{equation}
 	On remarque que l'on peut retrouver $Y$ grâce à la relation suivante en effectuant les dérivées de part et d'autre :
 	\begin{equation}
-	Y = \sum_{\gamma = 1}^{\gamma = c} \frac{\partial T}{\partial (kn_\gamma)}\frac{\partial (kn_\gamma)}{\partial k}
+	Y = \sum_{\gamma = 1}^{\gamma = c} \frac{\partial Y}{\partial (kn_\gamma)}\frac{\partial (kn_\gamma)}{\partial k}
 	\end{equation}
 	Le \textbf{théorème d'Euler pour les fonctions extensives} s'énonce dès lors :
 	\begin{equation}
 	Y = \sum _{\gamma = 1}^{\gamma = c} n_\gamma y_\gamma
 	\end{equation}
-	où $y_\gamma = \left(\dfrac{\partial Y}{\partial n_\gamma}\right)_{T,p,n'_\gamma}$. Pour une grandeur extensive : $y(T, p, kn_1,\dots, kn_c) = y(T, p,n_1,\dots, n_c)$ on aura le \textbf{théorème d'Euler pour les fonctions intensives} :
+	où $y_\gamma = \left(\dfrac{\partial Y}{\partial n_\gamma}\right)_{T,p,n'_\gamma}$. Pour une grandeur intensive : $y(T, p, kn_1,\dots, kn_c) = y(T, p,n_1,\dots, n_c)$ on aura le \textbf{théorème d'Euler pour les fonctions intensives} :
 	\begin{equation}
 	\sum_{\gamma = 1}^{\gamma = c} n_\gamma\left(\dfrac{\partial y}{\partial n_\gamma}\right)_{T, p, n'_\gamma} = 0
 	\end{equation}
@@ -508,7 +508,7 @@
 	\begin{equation}
 	V = \sum_{\gamma = 1}^{\gamma = c} n_\gamma v_\gamma\ \ \ \ \ \ \ \ \ \ 
 	H = \sum_{\gamma = 1}^{\gamma = c} n_\gamma h_\gamma\ \ \ \ \ \ \ \ \ \ 
-	C_p = \sum_{\gamma = 1}^{\gamma = c} n_\gamma C_{p,\gamma}
+	C_p = \sum_{\gamma = 1}^{\gamma = c} n_\gamma c_{p,\gamma}
 	\end{equation}
 	Effectuons la différentielle totale de $G(T, p, n_1,\dots, n_c)$ :
 	\begin{equation}
@@ -516,7 +516,7 @@
 	\end{equation}
 	On sait que si $dn_\gamma = 0 \rightarrow dG = -sdT + Vdp$. Comme nous volons généraliser, on considère $dn_\gamma \neq 0$. En connaissant la valeur des dérivées de (1.26)\footnote{$G(T,p,n) = U + pV - TS + n.\mu$} on peut généraliser :
 	\begin{equation}
-	dG = -S dT + V dp + \sum_\gamma dn_\gamma
+	dG = -S dT + V dp + \sum_\gamma dn_\gamma \mu_\gamma
 	\end{equation}
 	On peut généraliser d'avantage en considérant un système formé de plusieurs phases $G = \sum_\alpha G^\alpha(T, p, n_1^\alpha, \dots, n_c^\alpha)$ où $\mu_\gamma^\alpha$ est le potentiel chimique de $\gamma$ dans la phase $\alpha$. Cela donne :
 	\begin{equation}
@@ -534,7 +534,7 @@
 	Dans les slides, on donne comme exemple un mélange de deux liquides miscibles en équilibre avec la vapeur. On en arrive à une généralisation de la condition d'équilibre entre phases d'un corps pur : $\mu_A^1 = \mu_A^2$ \textbf{et} $\mu_B^1 = \mu_B^2$.
 	
 	\section{Propriétés des potentiels chimiques}
-	Cherchons à établir une relation donnant un lien entre les potentiels chimiques. On a : $dG = -S dT + V dp + \sum_\gamma dn_\gamma$ et $G = \sum_\gamma \mu_\gamma dn_\gamma \Rightarrow dG = \sum_\gamma n_\gamma d\mu_\gamma + \sum_\gamma u_\gamma dn_\gamma$. En égalisant les deux expressions, on retrouve ce lien connu sous le nom de \textbf{relation de Gibbs-Duhem} :
+	Cherchons à établir une relation donnant un lien entre les potentiels chimiques. On a : $dG = -S dT + V dp + \sum_\gamma \mu_\gamma dn_\gamma$ et $G = \sum_\gamma \mu_\gamma n_\gamma \Rightarrow dG = \sum_\gamma n_\gamma d\mu_\gamma + \sum_\gamma \mu_\gamma dn_\gamma$. En égalisant les deux expressions, on retrouve ce lien connu sous le nom de \textbf{relation de Gibbs-Duhem} :
 	\begin{equation}
 	SdT - Vdp + \sum_\gamma n_\gamma d\mu_\gamma = 0
 	\end{equation}
@@ -622,10 +622,10 @@
 	\end{equation}
 	\begin{itemize}
 		\item $A > 0$ : conversion réactifs $\rightarrow$ produits
-		\item $A > 0$ : conversion produits $\rightarrow$ réactifs
+		\item $A < 0$ : conversion produits $\rightarrow$ réactifs
 		\item $A = 0$ : équilibre
 	\end{itemize}
-	En multipliant cette fois-ci $\dfrac{dG}{d\xi}$ par $\dfrac{d\xi}{d\xi}$ on trouve :
+	En multipliant cette fois-ci $\dfrac{dG}{dt}$ par $\dfrac{d\xi}{d\xi}$ on trouve :
 	\begin{equation}
 	-A(\xi)\frac{d\xi}{dt} \leq 0
 	\end{equation}
@@ -638,7 +638,7 @@
 	\begin{equation}
 	Q = \Pi_\gamma \left(a_\gamma^{\nu_\gamma}\right)
 	\end{equation}
-	Par définition de la constane d'équilibre : 
+	Par définition de la constante d'équilibre : 
 	\begin{equation}
 	K(T,p) = \exp\left[\dfrac{A'(T,P)}{RT}\right] = \exp\left[\dfrac{-\sum_\gamma  \nu_\gamma \zeta_\gamma(T,p) }{RT} \right]
 	\end{equation} 
@@ -663,7 +663,7 @@
 	\subsubsection{Variation avec $p$}
 	Le raisonnement est semblable :
 	\begin{equation}
-	\left(\dfrac{\partial A}{\partial p}\right)_{T, n_\gamma} = - \sum_\gamma \left(\dfrac{\partial \mu_\gamma}{\partial p}\right)_{T, n_\gamma} = -\Delta Tp\ \ \ \ \ \text{où}\ \ \Delta Tp = \sum_\gamma \nu_\gamma v_\gamma
+	\left(\dfrac{\partial A}{\partial p}\right)_{T, n_\gamma} = - \sum_\gamma \nu_\gamma \left(\dfrac{\partial \mu_\gamma}{\partial p}\right)_{T, n_\gamma} = -\Delta Tp\ \ \ \ \ \text{où}\ \ \Delta Tp = \sum_\gamma \nu_\gamma v_\gamma
 	\end{equation}
 	Petite info $\left(\dfrac{\partial r_{Tp}}{\partial p}\right)_{T, n_\gamma} \approx 0$ pour (et \textbf{seulement}) les gaz parfaits.\\
 	
@@ -696,7 +696,7 @@
 	On observe donc une variation linéaires entre les tension de vapeurs des corps purs.
 	
 	\subsubsection{Solutions suffisamment diluées (donc idéales)}
-	Pour le solvay ($\gamma = 1$), on trouve la loi de Raoult énoncée ci-dessus. Pour le(s) soluté(s) ($\gamma > 1$) on utilisera la \textbf{loi de Henry} :
+	Pour le solvant ($\gamma = 1$), on trouve la loi de Raoult énoncée ci-dessus. Pour le(s) soluté(s) ($\gamma > 1$) on utilisera la \textbf{loi de Henry} :
 	\begin{equation}
 	p_s = k_s(T)x_s
 	\end{equation}
@@ -724,7 +724,7 @@
 	Une propriété colligative d'une solution chimique est une propriété qui dépend uniquement du nombre et non de la nature des particules de solutés dans la solution. Leur existence est conséquence de la dilution du soluté par le solvant\footnote{Source : wikipedia}.
 	
 	\subsection{Loi ébullioscopique}
-	La loi de Raoult ($p_1 = P_1^0x_1$) nous montre que la tension de vapeur augmente par ajouté d'un soluté\footnote{Si le titre de soluté augmente, $x_1$ diminue entraînement une diminution de $p_1$.}. \\
+	La loi de Raoult ($p_1 = P_1^0x_1$) nous montre que la tension de vapeur diminue par ajouté d'un soluté\footnote{Si le titre de soluté augmente, $x_1$ diminue entraînement une diminution de $p_1$.}. \\
 	Cela cause une augmentation de la température d'ébullition (ou de vaporisation. Comment calculer cette élévation par ajoute d'une quantité de soluté ? Considérons l'équilibre entre une solution liquide (') et la phase vapeur ('') du solvant pur :
 	\begin{equation}
 	\mu'(T,p,x_1') = \mu ''(T,p)
